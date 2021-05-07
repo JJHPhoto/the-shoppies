@@ -1,9 +1,10 @@
 import React from "react";
+import SearchPage from "./pages/SearchPage";
 
 function App() {
   return (
     <div className="App">
-      <h2>The Shoppies are here!</h2>
+      <SearchPage />
     </div>
   );
 }
