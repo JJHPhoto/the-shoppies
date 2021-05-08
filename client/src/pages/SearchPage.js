@@ -1,4 +1,5 @@
 import React from "react";
+import GlobalNavbar from "../components/GlobalNavbar";
 import SearchForm from "../components/SearchForm";
 
 function SearchPage() {
