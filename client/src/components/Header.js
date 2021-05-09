@@ -1,9 +1,13 @@
 import React from "react";
+import { Jumbotron } from "react-bootstrap";
 
 function Header() {
   return (
     <div>
-      <h2>Jumbotron here</h2>
+      <Jumbotron>
+        <h1>Welcome to the Shoppies Nominations App!</h1>
+        <p>You can search for movies to nominate for the Shoppies.</p>
+      </Jumbotron>{" "}
     </div>
   );
 }
