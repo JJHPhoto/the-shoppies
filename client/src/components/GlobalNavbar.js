@@ -2,7 +2,7 @@ import React from "react";
 import { Nav, Navbar } from "react-bootstrap";
 import { BiCameraMovie } from "react-icons/bi";
 
-function GlobalNavbar() {
+function GlobalNavbar(props) {
   return (
     <Navbar bg="primary" variant="dark">
       <Navbar.Brand href="#home">

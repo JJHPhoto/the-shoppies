@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = {
-  async getMovies() {
+  async setMovies() {
     return axios.get("/api/movies");
   },
 
