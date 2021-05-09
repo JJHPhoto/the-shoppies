@@ -6,6 +6,7 @@ import Header from "./components/Header";
 import SearchPage from "./pages/SearchPage";
 import Nominated from "./pages/Nominated";
 import NotFound from "./pages/NotFound";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
   return (

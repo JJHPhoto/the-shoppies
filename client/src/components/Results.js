@@ -13,10 +13,10 @@ function Results({ movies }) {
             {movies.map((movie) => (
               <Card key={movie.imdbID}>
                 <Card.Body>
+                  <h2 className="my-3">
+                    {movie.Title} ({movie.Year})
+                  </h2>
                   <NominateButton movie={movie} />
-                  <h2 className="my-3">{movie.Title}</h2>
-                  <h3>Release Year:</h3>
-                  <p>{movie.Year}</p>
                 </Card.Body>
               </Card>
             ))}

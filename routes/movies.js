@@ -12,15 +12,13 @@ router
   .post((req, res) => {
     console.log("Movies req", req.body);
 
-    const { id, movieInfo } = req.body;
-    const { title, plot, poster } = movieInfo;
-    const image = poster;
+    const { imdbID, movieInfo } = req.body;
+    const { title, year } = movieInfo;
 
     Movie.create({
-      id,
+      imdbID,
       title,
-      plot,
-      poster,
+      year,
     })
       .then((newMovie) => res.json(newMovie))
       .catch((err) => console.log(err));

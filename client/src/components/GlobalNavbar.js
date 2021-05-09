@@ -4,7 +4,7 @@ import { BiCameraMovie } from "react-icons/bi";
 
 function GlobalNavbar(props) {
   return (
-    <Navbar bg="primary" variant="dark">
+    <Navbar className="p-2" bg="primary" variant="dark">
       <Navbar.Brand href="#home">
         {" "}
         <BiCameraMovie /> The Shoppies!

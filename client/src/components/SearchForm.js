@@ -25,17 +25,16 @@ function SearchForm({ setMovies }) {
   return (
     <Card>
       <Card.Body>
-        <h2>Search</h2>
+        <h2 className="my-1">Movie Name</h2>
         <Form onSubmit={handleSubmit}>
           <Form.Group controlId="formMovieName">
-            <Form.Label>Movie Name</Form.Label>
             <Form.Control
               ref={movieSearch}
               type="text"
               placeholder="Search for a movie"
             />
           </Form.Group>
-          <Button variant="primary" type="submit">
+          <Button className="my-2" variant="primary" type="submit">
             Search
           </Button>
         </Form>
