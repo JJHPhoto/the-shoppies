@@ -3,8 +3,8 @@ const Schema = mongoose.Schema;
 
 const movieSchema = new Schema({
   imdbID: String,
-  title: String,
-  year: String,
+  Title: String,
+  Year: String,
 });
 
 const Movie = mongoose.model("Movie", movieSchema);

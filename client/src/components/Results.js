@@ -9,7 +9,7 @@ function Results({ movies }) {
       <Card.Body>
         {movies.length ? (
           <div>
-            <h2>Search Results</h2>
+            <h4>Search Results</h4>
             {movies.map((movie) => (
               <Card key={movie.imdbID}>
                 <Card.Body>
@@ -23,7 +23,7 @@ function Results({ movies }) {
           </div>
         ) : (
           <div>
-            <h2>Search Results</h2>
+            <h4>Search Results</h4>
           </div>
         )}
       </Card.Body>

@@ -6,22 +6,27 @@ router
   .route("/movies")
   .get((req, res) => {
     Movie.find()
-      .then((movies) => res.json(moives))
+      .then((movies) => res.json(movies))
       .catch((err) => console.log(err));
   })
   .post((req, res) => {
     console.log("Movies req", req.body);
 
-    const { imdbID, movieInfo } = req.body;
-    const { title, year } = movieInfo;
+    const { imdbID, Title, Year } = req.body;
 
     Movie.create({
       imdbID,
-      title,
-      year,
+      Title,
+      Year,
     })
       .then((newMovie) => res.json(newMovie))
       .catch((err) => console.log(err));
   });
+
+router.route("/movies/:imdbID").delete((req, res) => {
+  Movie.findByIdAndDelete(req.params.imdbID)
+    .then((deleteMovie) => res.json(deleteMovie))
+    .catch((err) => console.log(err));
+});
 
 module.exports = router;

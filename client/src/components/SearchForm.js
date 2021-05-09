@@ -12,7 +12,7 @@ function SearchForm({ setMovies }) {
 
     axios
       .get(
-        "http://www.omdbapi.com/?t=" +
+        "https://www.omdbapi.com/?t=" +
           movieSearch.current.value +
           "&apikey=" +
           APIKEY

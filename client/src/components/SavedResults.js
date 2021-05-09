@@ -1,5 +1,6 @@
 import React from "react";
-import { Button, Card } from "react-bootstrap";
+import { Card } from "react-bootstrap";
+import RemoveButton from "./RemoveButton";
 
 function SavedResults({ movies, getMovies }) {
   return (
@@ -12,9 +13,14 @@ function SavedResults({ movies, getMovies }) {
               <Card className="my-4" key={movies.imdbID}>
                 <Card.Body>
                   <Card.Title>{movie.Title}</Card.Title>
-                  <h2 className="my-3">"{movie.Title}"</h2>
-                  <h3>Release Year:</h3>
-                  <p>{movie.Year}</p>
+                  <h2 className="my-3">
+                    {movie.Title}({movie.Year})
+                  </h2>
+                  <RemoveButton
+                    imdbID={movies.imdbID}
+                    getMovies={getMovies}
+                    className="ml-2"
+                  />
                 </Card.Body>
               </Card>
             ))}
