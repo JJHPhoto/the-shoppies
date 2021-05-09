@@ -10,8 +10,8 @@ const api = {
     return axios.post("/api/movies", { ...movie });
   },
 
-  async removeMovie(omdbID) {
-    return axios.delete(`/api/movies/${omdbID}`);
+  async removeMovie(imdbID) {
+    return axios.delete(`/api/movies/${imdbID}`);
   },
 };
 

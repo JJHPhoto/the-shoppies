@@ -1,10 +1,24 @@
 import React from "react";
+import { Button } from "react-bootstrap";
+import api from "../utils/api";
 
-function RemoveButton() {
+function RemoveButton({ imdbID, getMovies, ...props }) {
+  const removeMovie = () => {
+    api
+      .removeMovie(imdbID)
+      .then((movie) => {
+        console.log("removed!", movie);
+        return getMovies();
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+  console.log("removeMovie", imdbID);
   return (
-    <div>
-      <h2>This will render to the nominated movie card and remove by ID</h2>
-    </div>
+    <Button onClick={removeMovie} {...props}>
+      Remove
+    </Button>
   );
 }
 

@@ -10,14 +10,14 @@ function SavedResults({ movies, getMovies }) {
           <div>
             <h2> Results </h2>
             {movies.map((movie) => (
-              <Card className="my-4" key={movies.imdbID}>
+              <Card className="my-4" key={movie.imdbID}>
                 <Card.Body>
-                  <Card.Title>{movie.Title}</Card.Title>
+                  {/* <Card.Title>{movie.Title}</Card.Title> */}
                   <h2 className="my-3">
                     {movie.Title}({movie.Year})
                   </h2>
                   <RemoveButton
-                    imdbID={movies.imdbID}
+                    imdbID={movie.imdbID}
                     getMovies={getMovies}
                     className="ml-2"
                   />
