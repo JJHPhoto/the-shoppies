@@ -18,7 +18,7 @@ function SearchForm({ setMovies }) {
           APIKEY
       )
       .then(({ data }) => {
-        console.log("Movie Searched!", data);
+        // console.log("Movie Searched!", data);
         setMovies([data]);
       });
   };

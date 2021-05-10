@@ -1,5 +1,5 @@
 import React from "react";
-import { Nav, Navbar } from "react-bootstrap";
+import { Navbar } from "react-bootstrap";
 import { BiCameraMovie } from "react-icons/bi";
 
 function GlobalNavbar(props) {
@@ -9,10 +9,6 @@ function GlobalNavbar(props) {
         {" "}
         <BiCameraMovie /> The Shoppies!
       </Navbar.Brand>
-      <Nav className="mr-auto">
-        <Nav.Link href="/">Search</Nav.Link>
-        <Nav.Link href="/nominated">Nominated</Nav.Link>
-      </Nav>
     </Navbar>
   );
 }

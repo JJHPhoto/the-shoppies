@@ -7,14 +7,14 @@ function RemoveButton({ movieId, getNominated, ...props }) {
     api
       .removeMovie(movieId)
       .then((movie) => {
-        console.log("removed!", movie);
+        // console.log("removed!", movie);
         return getNominated();
       })
       .catch((err) => {
         console.log(err);
       });
   };
-  console.log("removeMovie", movieId);
+  // console.log("removeMovie", movieId);
   return (
     <Button onClick={removeMovie} {...props}>
       Remove

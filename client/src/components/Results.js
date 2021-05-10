@@ -3,7 +3,7 @@ import { Card } from "react-bootstrap";
 import NominateButton from "./NominateButton";
 
 function Results({ movies, getNominated }) {
-  console.log("results movies", movies);
+  // console.log("results movies", movies);
   return (
     movies.length > 0 && (
       <Card className="my-4">

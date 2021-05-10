@@ -7,15 +7,14 @@ function NominateButton({ movie, getNominated, doneNominating }) {
     api
       .addMovie(movie)
       .then((data) => {
-        console.log("movie data", data);
-        console.log("yes, movie nomiated");
+        // console.log("movie data", data);
         return getNominated();
       })
       .catch((err) => {
         console.log(err);
       });
   };
-  console.log("Nominated Movie Button", movie);
+  // console.log("Nominated Movie Button", movie);
   return (
     <Button disabled={doneNominating} onClick={nominateMovie}>
       Nominate

@@ -16,7 +16,7 @@ function Nominated() {
     getMovies();
   }, [setMovies]);
 
-  console.log("nomiated Movies", movies);
+  // console.log("nomiated Movies", movies);
   return (
     <div>
       <SavedResults movies={movies} getMovies={getMovies} />
