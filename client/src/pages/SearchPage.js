@@ -13,8 +13,6 @@ function SearchPage({ movie }) {
 
   const nominatedMovies = nominated.map((movie) => movie.imdbID);
 
-  // console.log("don't nominate me!", nominatedMovies);
-
   const getNominated = () => {
     return api.getMovies().then((res) => {
       setNominated(res.data);
@@ -32,6 +30,7 @@ function SearchPage({ movie }) {
         movies={movies}
         getNominated={getNominated}
         nominatedMovies={nominatedMovies}
+        doneNominating={doneNominating}
       />
       {doneNominating && (
         <div>
