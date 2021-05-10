@@ -4,9 +4,9 @@ import RemoveButton from "./RemoveButton";
 
 function SavedResults({ nominated, getNominated }) {
   return (
-    <Card className="my-4">
-      <Card.Body>
-        {nominated.length ? (
+    nominated.length > 0 && (
+      <Card className="my-4">
+        <Card.Body>
           <div>
             <h2> Nominated Movies </h2>
             {nominated.map((movie) => (
@@ -24,13 +24,9 @@ function SavedResults({ nominated, getNominated }) {
               </Card>
             ))}
           </div>
-        ) : (
-          <div>
-            <h2> No Movie Found</h2>
-          </div>
-        )}
-      </Card.Body>
-    </Card>
+        </Card.Body>
+      </Card>
+    )
   );
 }
 
