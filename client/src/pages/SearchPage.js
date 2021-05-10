@@ -11,6 +11,8 @@ function SearchPage() {
 
   const doneNominating = nominated.length >= 5;
 
+  const nominatedMovies = nominated.map((movie) => movie.imdbID);
+
   const getNominated = () => {
     return api.getMovies().then((res) => {
       setNominated(res.data);
