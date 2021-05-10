@@ -25,13 +25,13 @@ function SearchPage() {
 
   return (
     <div>
-      {doneNominating && (
-        <div>
-          <h2>You have nominated your 5 movies!</h2>
-        </div>
-      )}
       <SearchForm setMovies={setMovies} />
       <Results movies={movies} getNominated={getNominated} />
+      {doneNominating && (
+        <div>
+          <h2 className="my-3">You have nominated your 5 movies!</h2>
+        </div>
+      )}
       <SavedResults nominated={nominated} getNominated={getNominated} />
     </div>
   );
