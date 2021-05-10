@@ -7,7 +7,6 @@ function Nominated() {
 
   const getMovies = () => {
     return api.getMovies().then((res) => {
-      console.log("get movies data", res);
       setMovies(res.data);
     });
   };
@@ -16,7 +15,6 @@ function Nominated() {
     getMovies();
   }, [setMovies]);
 
-  // console.log("nomiated Movies", movies);
   return (
     <div>
       <SavedResults movies={movies} getMovies={getMovies} />

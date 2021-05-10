@@ -6,7 +6,6 @@ const api = {
   },
 
   async addMovie(movie) {
-    console.log("added movies", { movie });
     return axios.post("/api/movies", { ...movie });
   },
 

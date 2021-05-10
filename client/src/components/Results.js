@@ -3,13 +3,12 @@ import { Card } from "react-bootstrap";
 import NominateButton from "./NominateButton";
 
 function Results({ movies, getNominated }) {
-  // console.log("results movies", movies);
   return (
     movies.length > 0 && (
       <Card className="my-4">
         <Card.Body>
           <div>
-            <h2>Search Results</h2>
+            <h2>Search Result</h2>
             {movies.map((movie) => (
               <Card key={movie.imdbID}>
                 <Card.Body>

@@ -6,7 +6,6 @@ import api from "../utils/api";
 
 function SearchPage() {
   const [movies, setMovies] = useState([]);
-  // console.log("Movies", movies);
 
   const [nominated, setNominated] = useState([]);
 
@@ -14,7 +13,6 @@ function SearchPage() {
 
   const getNominated = () => {
     return api.getMovies().then((res) => {
-      // console.log("get movies data", res);
       setNominated(res.data);
     });
   };
