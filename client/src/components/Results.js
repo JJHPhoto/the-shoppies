@@ -2,7 +2,10 @@ import React from "react";
 import { Card } from "react-bootstrap";
 import NominateButton from "./NominateButton";
 
-function Results({ movies, getNominated }) {
+function Results({ movies, getNominated, nominatedMovies }) {
+  // console.log("nominate me!", nominatedMovies);
+  // const alreadyNominated = nominatedMovies.includes(movie.imdbID);
+
   return (
     movies.length > 0 && (
       <Card className="my-4">
@@ -15,7 +18,11 @@ function Results({ movies, getNominated }) {
                   <h2 className="my-3">
                     {movie.Title} ({movie.Year})
                   </h2>
-                  <NominateButton movie={movie} getNominated={getNominated} />
+                  <NominateButton
+                    movie={movie}
+                    getNominated={getNominated}
+                    alreadyNominated={nominatedMovies.includes(movie.imdbID)}
+                  />
                 </Card.Body>
               </Card>
             ))}

@@ -4,7 +4,7 @@ import Results from "../components/Results";
 import SavedResults from "../components/SavedResults";
 import api from "../utils/api";
 
-function SearchPage() {
+function SearchPage({ movie }) {
   const [movies, setMovies] = useState([]);
 
   const [nominated, setNominated] = useState([]);
@@ -12,6 +12,8 @@ function SearchPage() {
   const doneNominating = nominated.length >= 5;
 
   const nominatedMovies = nominated.map((movie) => movie.imdbID);
+
+  // console.log("don't nominate me!", nominatedMovies);
 
   const getNominated = () => {
     return api.getMovies().then((res) => {
@@ -26,7 +28,11 @@ function SearchPage() {
   return (
     <div>
       <SearchForm setMovies={setMovies} />
-      <Results movies={movies} getNominated={getNominated} />
+      <Results
+        movies={movies}
+        getNominated={getNominated}
+        nominatedMovies={nominatedMovies}
+      />
       {doneNominating && (
         <div>
           <h2 className="my-3">You have nominated your 5 movies!</h2>

@@ -2,7 +2,12 @@ import React from "react";
 import { Button } from "react-bootstrap";
 import api from "../utils/api";
 
-function NominateButton({ movie, getNominated, doneNominating }) {
+function NominateButton({
+  movie,
+  getNominated,
+  doneNominating,
+  alreadyNominated,
+}) {
   const nominateMovie = () => {
     api
       .addMovie(movie)
@@ -14,7 +19,10 @@ function NominateButton({ movie, getNominated, doneNominating }) {
       });
   };
   return (
-    <Button disabled={doneNominating} onClick={nominateMovie}>
+    <Button
+      disabled={doneNominating || alreadyNominated}
+      onClick={nominateMovie}
+    >
       Nominate
     </Button>
   );
