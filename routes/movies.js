@@ -23,8 +23,8 @@ router
       .catch((err) => console.log(err));
   });
 
-router.route("/movies/:imdbID").delete((req, res) => {
-  Movie.findByIdAndDelete(req.params.imdbID)
+router.route("/movies/:id").delete((req, res) => {
+  Movie.findByIdAndDelete(req.params.id)
     .then((deleteMovie) => res.json(deleteMovie))
     .catch((err) => console.log(err));
 });

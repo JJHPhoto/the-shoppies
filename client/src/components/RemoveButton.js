@@ -2,19 +2,19 @@ import React from "react";
 import { Button } from "react-bootstrap";
 import api from "../utils/api";
 
-function RemoveButton({ imdbID, getMovies, ...props }) {
+function RemoveButton({ movieId, getNominated, ...props }) {
   const removeMovie = () => {
     api
-      .removeMovie(imdbID)
+      .removeMovie(movieId)
       .then((movie) => {
         console.log("removed!", movie);
-        return getMovies();
+        return getNominated();
       })
       .catch((err) => {
         console.log(err);
       });
   };
-  console.log("removeMovie", imdbID);
+  console.log("removeMovie", movieId);
   return (
     <Button onClick={removeMovie} {...props}>
       Remove

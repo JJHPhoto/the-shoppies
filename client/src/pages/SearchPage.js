@@ -1,32 +1,38 @@
 import React, { useEffect, useState } from "react";
 import SearchForm from "../components/SearchForm";
 import Results from "../components/Results";
-import Nominated from "./Nominated";
-// import SavedResults from "../components/SavedResults";
-// import api from "../utils/api";
+import SavedResults from "../components/SavedResults";
+import api from "../utils/api";
 
 function SearchPage() {
   const [movies, setMovies] = useState([]);
   console.log("Movies", movies);
 
-  // const getMovies = () => {
-  //   return api.getMovies().then((res) => {
-  //     console.log("get movies data", res);
-  //     setMovies(res.data);
-  //   });
-  // };
+  const [nominated, setNominated] = useState([]);
 
-  // useEffect(() => {
-  //   getMovies();
-  // }, [setMovies]);
+  const doneNominating = nominated.length >= 5;
 
-  // console.log("nominated Movies on page", movies);
+  const getNominated = () => {
+    return api.getMovies().then((res) => {
+      console.log("get movies data", res);
+      setNominated(res.data);
+    });
+  };
+
+  useEffect(() => {
+    getNominated();
+  }, [setNominated]);
+
   return (
     <div>
+      {doneNominating && (
+        <div>
+          <h2>You have nominated your 5 movies!</h2>
+        </div>
+      )}
       <SearchForm setMovies={setMovies} />
-      <Results movies={movies} />
-      <Nominated />
-      {/* <SavedResults movies={movies} getMovies={getMovies} /> */}
+      <Results movies={movies} getNominated={getNominated} />
+      <SavedResults nominated={nominated} getNominated={getNominated} />
     </div>
   );
 }

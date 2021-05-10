@@ -2,23 +2,22 @@ import React from "react";
 import { Card } from "react-bootstrap";
 import RemoveButton from "./RemoveButton";
 
-function SavedResults({ movies, getMovies }) {
+function SavedResults({ nominated, getNominated }) {
   return (
     <Card className="my-4">
       <Card.Body>
-        {movies.length ? (
+        {nominated.length ? (
           <div>
-            <h2> Results </h2>
-            {movies.map((movie) => (
-              <Card className="my-4" key={movie.imdbID}>
+            <h2> Nominated Movies </h2>
+            {nominated.map((movie) => (
+              <Card className="my-4" key={movie._id}>
                 <Card.Body>
-                  {/* <Card.Title>{movie.Title}</Card.Title> */}
                   <h2 className="my-3">
                     {movie.Title}({movie.Year})
                   </h2>
                   <RemoveButton
-                    imdbID={movie.imdbID}
-                    getMovies={getMovies}
+                    movieId={movie._id}
+                    getNominated={getNominated}
                     className="ml-2"
                   />
                 </Card.Body>
